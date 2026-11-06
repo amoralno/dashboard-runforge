@@ -1,0 +1,91 @@
+.modal-backdrop {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(10, 25, 47, 0.6); 
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px; z-index: 1000;
+}
+
+.modal-content {
+  background-color: #ffffff; border-radius: 12px;
+  width: 100%; max-width: 600px; max-height: 90vh;
+  display: flex; flex-direction: column;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e0d8;
+}
+
+.modal-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding: 20px; border-bottom: 1px solid #e2e0d8;
+}
+
+.modal-header h2 { 
+  margin: 0 0 4px 0; 
+  font-family: 'Georgia', serif; 
+  font-size: 22px; 
+  color: #0a192f; 
+}
+.modal-repo { margin: 0; color: #64748b; font-size: 14px; }
+
+.close-btn { 
+  background: none; border: none; font-size: 20px; color: #64748b; 
+  cursor: pointer; padding: 4px; border-radius: 4px; transition: background 0.2s;
+}
+.close-btn:hover { background-color: #f1f5f9; color: #0a192f; }
+
+.modal-body { padding: 20px; overflow-y: auto; }
+.meta-row { display: flex; gap: 24px; margin-bottom: 20px; font-size: 14px; color: #475569; flex-wrap: wrap; }
+
+.section { margin-bottom: 20px; }
+.section h3 { font-size: 14px; color: #0a192f; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.logs-box {
+  background-color: #0a192f;
+  color: #e2e8f0; padding: 16px; border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace; font-size: 13px; 
+  white-space: pre-wrap; max-height: 200px; overflow-y: auto;
+}
+
+.result-box { 
+  background-color: #f7f6f2; border: 1px solid #e2e0d8; 
+  padding: 12px; border-radius: 8px; font-size: 14px; color: #0a192f; 
+}
+.modal-content:focus {
+  outline: none;
+}
+
+.close-btn:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .modal-backdrop {
+    padding: 12px;
+    align-items: flex-end;
+  }
+
+  .modal-content {
+    max-height: calc(100dvh - 24px);
+    border-radius: 12px;
+  }
+
+  .modal-header,
+  .modal-body {
+    padding: 16px;
+  }
+
+  .modal-header h2 {
+    font-size: 19px;
+    overflow-wrap: anywhere;
+  }
+
+  .meta-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logs-box {
+    overflow-x: auto;
+    overflow-wrap: anywhere;
+  }
+}

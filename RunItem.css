@@ -1,0 +1,121 @@
+
+
+.run-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: #ffffff;
+  border: 1px solid #e2e0d8;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.run-item:hover {
+  transform: scale(1.02) translateY(-2px);
+  box-shadow: 0 12px 20px -8px rgba(10, 25, 47, 0.15);
+  border-color: #cbd5e1;
+  z-index: 10;
+}
+
+.run-info { display: flex; flex-direction: column; gap: 4px; }
+.run-name { margin: 0; font-size: 16px; color: #0a192f; font-weight: 600; }
+.run-repo { margin: 0; font-size: 14px; color: #64748b; }
+.run-branch {
+  font-family: monospace;
+  background-color: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.run-meta { display: flex; align-items: center; gap: 20px; font-size: 13px; color: #64748b; }
+
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.status-badge::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+  box-shadow: 0 0 4px currentColor; 
+}
+
+.status-running { background-color: #e0f2fe; color: #0369a1; }
+.status-succeeded { background-color: #dcfce7; color: #15803d; }
+.status-failed { background-color: #fee2e2; color: #b91c1c; }
+.status-queued { background-color: #f1f5f9; color: #475569; }
+
+
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px dashed #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.empty-state h3 {
+  font-family: 'Georgia', 'Times New Roman', serif; 
+  font-size: 24px;
+  color: #0a192f;
+  margin: 0;
+}
+
+.empty-state p {
+  color: #64748b;
+  font-size: 15px;
+  max-width: 400px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+
+.reset-btn {
+  margin-top: 8px;
+  background-color: transparent;
+  color: #0a192f;
+  border: 1px solid #0a192f;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.reset-btn:hover {
+  background-color: #0a192f;
+  color: #ffffff;
+}
+
+
+@media (max-width: 600px) {
+  .run-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .run-meta {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

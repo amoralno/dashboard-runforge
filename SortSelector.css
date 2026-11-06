@@ -1,0 +1,75 @@
+
+.custom-select {
+  position: relative;
+  min-width: 180px;
+  user-select: none;
+}
+
+.select-button {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #0a192f;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.select-button:hover {
+  border-color: #94a3b8;
+}
+
+.select-button:focus {
+  outline: none;
+  border-color: #0a192f;
+}
+
+.chevron {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.select-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #e2e0d8;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(10, 25, 47, 0.1);
+  list-style: none;
+  padding: 6px 0;
+  margin: 0;
+  z-index: 50;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.select-item {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #0a192f;
+  transition: background-color 0.15s;
+}
+
+.select-item:hover {
+  background-color: #f7f6f2; 
+}
+
+.select-item.selected {
+  background-color: #e2e0d8;
+  font-weight: 600;
+}
